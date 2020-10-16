@@ -4,6 +4,7 @@
 	margin: 0;
 	padding-bottom: 5px;
 
+
 }
 body{
 	font-family: URW Chancery L, cursive;
@@ -49,6 +50,7 @@ body{
 
 .container-fluid{
 	position: relative;
+	
 }
 
 h1{
