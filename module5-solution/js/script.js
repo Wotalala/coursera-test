@@ -114,6 +114,12 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       // 
+        dc.loadMenuItems = function (chooseRandomCategory) {
+        showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+          menuItemsUrl + chosenCategoryShortName,
+          buildAndShowMenuItemsHTML);
+      };
       // var homeHtmlToInsertIntoMainPage = ....
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
 
