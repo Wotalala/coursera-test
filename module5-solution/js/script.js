@@ -113,14 +113,10 @@ function buildAndShowHomeHTML (categories) {
       // $dc.loadMenuItems('L')
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
-      // 
-        dc.loadMenuItems = function (chooseRandomCategory) {
-        showLoading("#main-content");
-        $ajaxUtils.sendGetRequest(
-          menuItemsUrl + chosenCategoryShortName,
-          buildAndShowMenuItemsHTML);
-      };
+      //
+       chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
       // var homeHtmlToInsertIntoMainPage = ....
+
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -141,7 +137,7 @@ function chooseRandomCategory (categories) {
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
-
+      
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
